@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        html,
+        body {
+            height: 100vh;
+            width: 100%;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .header,
+        .footer {
+            background-color: #1a0276;
+        }
+
+        .warpper {
+            max-width: 1200px;
+        }
+
+        .header-warpper {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .home {
+            color: white;
+        }
+
+        .main-content-warpper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-grow: 1;
+        }
+
+
+        .searchbar-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        .searchbar-title {
+            color: #1a0276;
+            font-size: 30px;
+        }
+
+        .search {
+            padding: 4px 8px;
+            width: 400px;
+        }
+
+
+        .screens-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a0276;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .screen-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .choose-btn {
+            padding: 8px 12px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+
+
+        .footer-warpper {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-container">
+        <header class="header">
+            <div class="warpper header-warpper">
+                <div class="logo-container">
+                    <img src="" alt="" class="logo">
+                </div>
+
+                <h3 class="home">Home</h3>
+            </div>
+        </header>
+
+        <div class="main-content-container">
+            <div class="warpper main-content-warpper">
+
+                <div class="searchbar-container">
+                    <p class="searchbar-title">
+                        Is your website device friendly?
+                    </p>
+                    <form action="">
+                        <input type="text" name="search" placeholder="Enter any website Link" class="search" />
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="screens-container">
+            <div class="screen-card">
+                <div class="image-container">
+                    <img src="" alt="" class="image">
+                </div>
+
+                <h3 class="screen-title">Iphone X</h3>
+                <p class="screen-size">375 X 812</p>
+                <button onclick="modifyScreen(375, 812)" class="choose-btn">CHOOSE</button>
+            </div>
+
+            <div class="screen-card">
+                <div class="image-container">
+                    <img src="" alt="" class="image">
+                </div>
+
+                <h3 class="screen-title">Galaxy Note 10</h3>
+                <p class="screen-size">412 X 869</p>
+                <button onclick="modifyScreen(412, 869)" class="choose-btn">CHOOSE</button>
+            </div>
+
+            <div class="screen-card">
+                <div class="image-container">
+                    <img src="" alt="" class="image">
+                </div>
+
+                <h3 class="screen-title">Ipad Pro</h3>
+                <p class="screen-size">1024 X 1366</p>
+                <button onclick="modifyScreen(1024, 1366)" class="choose-btn">CHOOSE</button>
+            </div>
+
+            <div class="screen-card">
+                <div class="image-container">
+                    <img src="" alt="" class="image">
+                </div>
+
+                <h3 class="screen-title">Mac</h3>
+                <p class="screen-size">1920 X 1080</p>
+                <button onclick="modifyScreen(1920, 1080)" class="choose-btn">CHOOSE</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="warpper footer-warpper">
+                <p class="footer-text">@ 2023</p>
+
+            </div>
+        </footer>
+    </main>
+
+
+    <script>
+        const searchbar = document.querySelector(".search")
+
+        function modifyScreen(width, height) {
+            const newWindow = window.open(searchbar.value, 'newWindow', `width=${width},height=${height}`);
+        }
+    </script>
+</body>
+
+</html>
